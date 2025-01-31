@@ -15,13 +15,27 @@ class _HomePageState extends State<HomePage> {
 
   List TodoList = [];
 
-
   @override
-
   void initState() {
     super.initState();
     TodoList = _mybox.get('todo', defaultValue: []);
   }
+
+  void _addTodo() {
+    setState(() {
+      TodoList.add(_textController.text);
+      _mybox.put('todo', TodoList);
+      _textController.clear();
+    });
+  }
+
+  void _deleteTodo() {
+    setState(() {
+      TodoList.clear();
+      _mybox.put('todo', TodoList);
+    });
+  }
+
   Widget build(BuildContext context) {
     return Scaffold();
   }
