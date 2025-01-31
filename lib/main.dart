@@ -4,7 +4,7 @@ import 'package:local_database/pages/home_page.dart';
 
 void main() async {
   await Hive.initFlutter();
-  await Hive.openBox('myBox');
+  
   runApp(const MyApp());
 }
 
