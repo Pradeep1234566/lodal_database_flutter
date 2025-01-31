@@ -36,7 +36,21 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  void opennew() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Add New Todo'),
+      ),
+    );
+  }
+
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: _addTodo,
+        child: const Icon(Icons.add),
+      ),
+    );
   }
 }
